@@ -1,0 +1,83 @@
+@use 'config';
+@use 'variables';
+
+/* COVER SECTION */
+
+header {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background: variables.$white-color;
+
+	.info-container {
+		@include config.centerElement;
+		text-align: center;
+
+		h1 {
+			font-size: 56px;
+			font-weight: 700;
+			color: variables.$black-color;
+		}
+
+		p {
+			font-size: 20px;
+			font-weight: 400;
+			color: variables.$black-color;
+		}
+
+		.made-container {
+			margin: 15px 0 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		span {
+			margin: 0 10px 8px 10px;
+			font-size: 21px;
+		}
+
+		a {
+			color: variables.$black-color;
+			font-size: 25px;
+
+			&:hover {
+				color: variables.$black-shadow-color;
+			}
+		}
+
+		button {
+			padding: 15px 25px;
+			background: variables.$black-color;
+			border-radius: 3px;
+			color: variables.$white-color;
+			font-size: 18px;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+
+			&:hover {
+				background: variables.$black-shadow-color;
+			}
+		}
+	}
+}
+
+/* ANIMATIONS */
+
+@keyframes close {
+	from {
+		transform: translate(0, 0);
+	}
+
+	to {
+		transform: translate(0, -2000px);
+	}
+}
+
+.start {
+	animation-name: close;
+	animation-iteration-count: 1;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}

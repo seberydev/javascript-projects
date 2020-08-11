@@ -1,0 +1,88 @@
+/* COLORS */
+/* GENERAL STYLES */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #363636;
+  font-family: "Recursive", sans-serif;
+}
+
+/* MIXINS */
+/* COVER SECTION */
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #eeeeee;
+}
+header .info-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+header .info-container h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: #363636;
+}
+header .info-container p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #363636;
+}
+header .info-container .made-container {
+  margin: 15px 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .info-container span {
+  margin: 0 10px 8px 10px;
+  font-size: 21px;
+}
+header .info-container a {
+  color: #363636;
+  font-size: 25px;
+}
+header .info-container a:hover {
+  color: #474747;
+}
+header .info-container button {
+  padding: 15px 25px;
+  background: #363636;
+  border-radius: 3px;
+  color: #eeeeee;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+header .info-container button:hover {
+  background: #474747;
+}
+
+/* ANIMATIONS */
+@keyframes close {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -2000px);
+  }
+}
+.start {
+  animation-name: close;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/*# sourceMappingURL=main.css.map */
