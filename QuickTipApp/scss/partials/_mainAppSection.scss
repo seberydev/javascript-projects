@@ -1,0 +1,206 @@
+@use 'config';
+@use 'variables';
+
+/* MAIN APP FIRST SECTION */
+
+main {
+	z-index: 5;
+	@include config.centerElement;
+	width: 320px;
+	height: 543px;
+	background: variables.$main-color;
+	border-radius: 15px;
+	padding: 15px 15px;
+
+	/* TITLE SECTION */
+	& > h2 {
+		font-size: variables.$main-medium-size;
+		font-weight: 700;
+		color: variables.$secondary-color;
+
+		i {
+			margin-right: 20px;
+		}
+	}
+
+	/* FIRST SECTION CONTAINER */
+
+	.first-section-container {
+		/* BILL CONTAINER */
+
+		.bill-container {
+			display: flex;
+			flex-direction: column;
+			@include config.margin-between;
+			position: relative;
+
+			&::before {
+				content: "$";
+				font-size: variables.$main-big-size;
+				color: variables.$secondary-color;
+				font-weight: 400;
+				position: absolute;
+				top: 10px;
+			}
+
+			input {
+				-webkit-appearance: none;
+				-moz-appearance: textfield;
+				background: variables.$main-color;
+				text-align: right;
+				height: 50px;
+				font-size: variables.$main-big-size;
+				color: variables.$secondary-color;
+				font-weight: 400;
+				border: none;
+				border-bottom: 2px solid variables.$secondary-color;
+			}
+
+			label {
+				font-weight: 500;
+				color: variables.$secondary-color;
+				font-size: variables.$main-normal-size;
+				margin-top: 10px;
+			}
+		}
+
+		/* TIP CONTAINER */
+
+		.tip-container {
+			display: flex;
+			flex-direction: column;
+
+			div {
+				display: flex;
+				justify-content: space-between;
+				color: variables.$secondary-color;
+				font-size: variables.$main-normal-size;
+				margin-top: 15px;
+
+				label {
+					font-weight: 500;
+				}
+
+				p {
+					font-weight: 700;
+				}
+			}
+		}
+
+		/* TOTALS CONTAINER */
+
+		.totals-container {
+			display: flex;
+			flex-direction: column;
+			color: variables.$secondary-color;
+			font-size: variables.$main-normal-size;
+			@include config.margin-between;
+			background: variables.$terciary-color;
+			border-radius: 3px;
+			padding: 10px;
+
+			hr {
+				margin: 15px 0;
+				color: variables.$secondary-color;
+			}
+
+			.total-tip-container,
+			.total-bill-container {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.total-bill-container {
+				p {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+/* INPUT RANGE */
+
+main {
+	input[type="range"] {
+		@include config.input-styles;
+
+		&::-webkit-slider-thumb,
+		&::-moz-range-thumb {
+			@include config.input-number;
+		}
+	}
+}
+
+/* MAIN APP SECOND SECTION */
+
+main {
+	/* SECOND SECTION CONTAINER */
+
+	.second-section-container {
+		/* SPLIT CONTAINER */
+
+		.split-container {
+			display: flex;
+			flex-direction: column;
+
+			div {
+				display: flex;
+				justify-content: space-between;
+				color: variables.$secondary-color;
+				margin-top: 15px;
+				font-size: variables.$main-normal-size;
+
+				p {
+					font-weight: 500;
+				}
+
+				p:last-child {
+					font-weight: 700;
+				}
+			}
+		}
+
+		/* TOTALS SPLIT CONTAINER */
+
+		.totals-split-container {
+			@include config.margin-between;
+			color: variables.$secondary-color;
+
+			div {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 10px;
+				font-size: variables.$main-normal-size;
+
+				p {
+					font-weight: 500;
+				}
+
+				p:last-child {
+					font-weight: 700;
+				}
+			}
+		}
+
+		/* REPOSITORY CONTAINER */
+
+		.repository-container {
+			text-align: right;
+
+			a {
+				padding: 10px 15px;
+				background: variables.$secondary-color;
+				font-weight: 700;
+				font-size: variables.$main-normal-size;
+				color: variables.$main-color;
+				border-radius: 3px;
+				text-decoration: none;
+
+				i {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}

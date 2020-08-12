@@ -38,6 +38,84 @@
 			</div>
 		</header>
 
+		<!-- QUICK TIP APP CONTAINER -->
+		<main>
+			<!-- TITLE CONTAINER -->
+			<h2><i class="fas fa-hand-holding-usd"></i>QUICK TIP APP</h2>
+
+			<!-- FIRST SECTION CONTAINER -->
+			<section class="first-section-container">
+				<!-- BILL CONTAINER -->
+				<div class="bill-container">
+					<input step="0.01" type="number" id="bill" placeholder="Your Bill" />
+					<label for="bill">Bill</label>
+				</div>
+
+				<!-- TIP CONTAINER -->
+				<div class="tip-container">
+					<input min="0" max="100" value="0" type="range" id="tip" />
+					<div>
+						<label for="tip">Select Tip</label>
+						<p id="tip-percentage">%0%%</p>
+					</div>
+				</div>
+
+				<!-- TOTALS CONTAINER -->
+				<div class="totals-container">
+					<!-- TOTAL TIP CONTAINER  -->
+					<div class="total-tip-container">
+						<p>Tip</p>
+						<p id="total-tip">%$ 0.00%</p>
+					</div>
+
+					<hr />
+
+					<!-- TOTAL BILL CONTAINER -->
+					<div class="total-bill-container">
+						<p>Total</p>
+						<p id="total-bill">%$ 0.00%</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECOND SECTION CONTAINER -->
+
+			<section class="second-section-container">
+				<!-- SPLIT CONTAINER -->
+
+				<div class="split-container">
+					<input min="1" max="100" value="1" type="range" id="split" />
+					<div>
+						<p>Split</p>
+						<p id="split-text">%1 Person%</p>
+					</div>
+				</div>
+
+				<!-- TOTAlS SPLIT CONTAINER -->
+				<div class="totals-split-container">
+					<div>
+						<p>Bill Each</p>
+						<p id="bill-each">%$ 0.00%</p>
+					</div>
+
+					<div>
+						<p>Tip Each</p>
+						<p id="tip-each">%$ 0.00%</p>
+					</div>
+				</div>
+
+				<!-- REPOSITORY CONTAINER -->
+				<div class="repository-container">
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						>Repository<i class="fab fa-github"></i
+					></a>
+				</div>
+			</section>
+		</main>
+
 		<!-- SCRIPTS -->
 		<script src="js/main.js"></script>
 	</body>
