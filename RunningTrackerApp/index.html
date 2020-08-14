@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Running Tracker App By Sebery" />
+		<!-- ICON -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="img/favicon-16x16.png"
+		/>
+		<title>Running Tracker App | By Sebery</title>
+		<!-- SCRIPTS -->
+		<script
+			src="https://kit.fontawesome.com/00a4efd493.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="css/main.css" />
+		<!-- FONTS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- MAIN HEADER -->
+		<header>
+			<div class="info-container">
+				<h1>RUNNING TRACKER APP</h1>
+				<div class="made-container">
+					<p>Made By Sebery</p>
+					<span>👉</span>
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						><i class="fab fa-github"></i
+					></a>
+				</div>
+				<button id="start" type="button">Get Started</button>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main>
+			<!-- MAIN INFO CONTAINER -->
+			<div class="main-info-container">
+				<!-- MAIN GOAL INFO -->
+				<h3>
+					Weekly Goal: <span id="total-run">%0%</span>/<span id="goal"
+						>%0%</span
+					>
+				</h3>
+
+				<!-- PROGRESS BAR CONTAINER -->
+				<div class="progress-container">
+					<div id="progress-bar"></div>
+					<form id="units">
+						<select name="unit" id="select-type">
+							<option value="m">m</option>
+							<option value="km">km</option>
+							<option value="miles">mi</option>
+						</select>
+					</form>
+				</div>
+
+				<!-- FORM CONTAINER -->
+				<div class="form-container">
+					<!-- GOAL INPUT -->
+					<form id="change-goal">
+						<input
+							id="change-input"
+							type="number"
+							min="0"
+							step="0.1"
+							placeholder="Your Goal"
+						/>
+						<button type="submit">Change</button>
+					</form>
+
+					<!-- UNIT INPUT -->
+					<form id="add-unit">
+						<input
+							id="units-today"
+							type="number"
+							min="0"
+							step="0.1"
+							placeholder="%Units% Today"
+						/>
+						<button type="submit">Add</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- OTHER INFO CONTAINER -->
+			<div class="other-info-container">
+				<!-- LAST DAYS CONTAINER -->
+				<div class="last-days-container">
+					<div>
+						<h3>Last 7 Days</h3>
+						<ul>
+							<li>%-%</li>
+							<li>%-%</li>
+							<li>%-%</li>
+							<li>%-%</li>
+							<li>%-%</li>
+							<li>%-%</li>
+							<li>%-%</li>
+						</ul>
+					</div>
+				</div>
+
+				<hr />
+
+				<!-- FINAL INFO CONTAINER -->
+				<div class="final-info-container">
+					<ul>
+						<li>
+							<p>Total</p>
+							<span id="total">%0.0m%</span>
+						</li>
+
+						<li>
+							<p>Average Distance</p>
+							<span id="average-distance">%0.0m%</span>
+						</li>
+
+						<li>
+							<p>This Weeks High</p>
+							<span id="this-weeks">%0.0m%</span>
+						</li>
+					</ul>
+
+					<div class="repository-container">
+						<a
+							rel="noopener noreferrer"
+							target="_blank"
+							href="https://github.com/Sebery/javascript-projects"
+							>Repository<i class="fab fa-github"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- SCRIPTS -->
+		<script src="js/cover-element.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+@use 'variables';
+
+/* GENERAL STYLES */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	background: variables.$light-yellow-color;
+	width: 100%;
+	height: 100vh;
+	font-family: "Rowdies", cursive;
+}
+
+ul {
+	list-style: none;
+}
+
+/* MIXINS */
+
+@mixin center-element {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

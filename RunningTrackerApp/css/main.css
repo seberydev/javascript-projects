@@ -1,0 +1,288 @@
+/* COLORS */
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #e6d0a3;
+  width: 100%;
+  height: 100vh;
+  font-family: "Rowdies", cursive;
+}
+
+ul {
+  list-style: none;
+}
+
+/* MIXINS */
+/* COVER SECTION */
+header {
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background: #dbdbdb;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+header .info-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+header .info-container h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #cf7500;
+}
+header .info-container p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #cf7500;
+}
+header .info-container .made-container {
+  margin: 15px 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .info-container span {
+  margin: 0 10px 8px 10px;
+  font-size: 1.8rem;
+}
+header .info-container a {
+  color: #cf7500;
+  font-size: 2rem;
+}
+header .info-container a:hover {
+  color: #cf7500;
+}
+header .info-container button {
+  padding: 15px 25px;
+  background: #000000;
+  border-radius: 3px;
+  color: #dbdbdb;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+header .info-container button:hover {
+  background: #141414;
+}
+
+/* ANIMATIONS */
+@keyframes close {
+  from {
+    top: 50%;
+  }
+  to {
+    top: -50%;
+  }
+}
+.start {
+  animation-name: close;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* MAIN APP CONTENT */
+main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #cf7500;
+  z-index: 5;
+  border-radius: 15px;
+  width: 320px;
+  height: 533px;
+  /* REMOVE INPUT ARROWS */
+  /* GENERAL STYLES */
+  /* MAIN INFO CONTAINER */
+}
+main input::-webkit-outer-spin-button,
+main input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+main input[type=number] {
+  -moz-appearance: textfield;
+}
+main input {
+  border: none;
+  font-weight: 400;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #dbdbdb;
+  background: #cf7500;
+  margin: 15px 0;
+}
+main p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000000;
+}
+main span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+}
+main .main-info-container {
+  background: #cf7500;
+  border-radius: 15px 15px 0 0;
+  /* PROGRESS BAR CONTAINER */
+}
+main .main-info-container h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #dbdbdb;
+  padding: 15px 0;
+}
+main .main-info-container .progress-container {
+  width: 90%;
+  margin: 0 auto 50px auto;
+  height: 30px;
+  background: #dbdbdb;
+  border-radius: 5px;
+  position: relative;
+}
+main .main-info-container .progress-container #progress-bar {
+  width: 0%;
+  border-radius: 5px;
+  height: 30px;
+  background: #000000;
+}
+main .main-info-container .progress-container form {
+  position: absolute;
+  bottom: -35px;
+  right: 0;
+}
+main .main-info-container .progress-container form select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 5px 25px 5px 10px;
+  border-radius: 3px;
+  color: #dbdbdb;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background: #000000;
+  background-image: url(https://i.ibb.co/T1PvbRp/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right 5px top 70%, 0 0;
+  cursor: pointer;
+}
+main .main-info-container .progress-container form select:hover {
+  background: #141414;
+  background-image: url(https://i.ibb.co/T1PvbRp/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right 5px top 70%, 0 0;
+}
+main .main-info-container .progress-container form select::-ms-expand {
+  display: none;
+}
+main .main-info-container .form-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+main .main-info-container .form-container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .main-info-container .form-container button {
+  background: #000000;
+  padding: 10px 0;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  color: #dbdbdb;
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 70px;
+  height: 90%;
+  margin-left: 10px;
+  text-align: center;
+}
+main .main-info-container .form-container button:hover {
+  background: #141414;
+}
+
+/* OTHER INFO CONTAINER */
+main .other-info-container {
+  border-radius: 10px 10px 15px 15px;
+  background: #dbdbdb;
+  padding: 15px 10px;
+  /* LAST DAYS CONTAINER */
+  /* FINAL INFO CONTAINER */
+}
+main .other-info-container .last-days-container {
+  margin-bottom: 20px;
+}
+main .other-info-container .last-days-container h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+}
+main .other-info-container .last-days-container ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+main .other-info-container .last-days-container ul li {
+  border: 1px solid black;
+  padding: 10px 5px;
+}
+main .other-info-container .final-info-container li {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 5px;
+}
+main .other-info-container .final-info-container .repository-container {
+  text-align: center;
+}
+main .other-info-container .final-info-container .repository-container a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #000000;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #dbdbdb;
+  border-radius: 3px;
+  text-decoration: none;
+}
+main .other-info-container .final-info-container .repository-container a:hover {
+  background: #141414;
+}
+main .other-info-container .final-info-container .repository-container a i {
+  margin-left: 10px;
+}
+main hr {
+  color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/*# sourceMappingURL=main.css.map */
