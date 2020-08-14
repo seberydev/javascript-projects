@@ -32,7 +32,6 @@ header {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: none;
 }
 header .info-container {
   position: absolute;
@@ -246,12 +245,14 @@ main .other-info-container .last-days-container h3 {
 }
 main .other-info-container .last-days-container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 main .other-info-container .last-days-container ul li {
   border: 1px solid black;
   padding: 10px 5px;
+  margin-top: 10px;
 }
 main .other-info-container .final-info-container li {
   display: flex;
