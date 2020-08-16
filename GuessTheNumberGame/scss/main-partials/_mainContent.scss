@@ -1,0 +1,230 @@
+@use 'config';
+@use 'variables';
+
+/* MAIN CONTENT */
+/* START GAME SECTION */
+main {
+	z-index: 5;
+	@include config.center-element;
+	width: 320px;
+
+	.start-game-section {
+		text-align: center;
+
+		h3 {
+			font-size: 2rem;
+			font-weight: 700;
+			color: variables.$normal-color;
+		}
+
+		p {
+			font-size: 1.8rem;
+			font-weight: 700;
+			color: variables.$normal-color;
+			margin: 30px 0 8px 0;
+		}
+
+		.difficulty-buttons-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			button {
+				width: 60%;
+				margin: 7px 0;
+				border-radius: 5px;
+				border: 2px solid variables.$normal-color;
+				padding: 13px 15px;
+				color: variables.$normal-color;
+				font-weight: 700;
+				font-size: 1.4rem;
+				cursor: pointer;
+				transition: 0.4s all ease;
+			}
+
+			#easy {
+				background: variables.$green-color;
+
+				&:hover {
+					font-size: 1.55rem;
+					background: variables.$green-shadow-color;
+				}
+			}
+
+			#hard {
+				background: variables.$red-color;
+
+				&:hover {
+					font-size: 1.55rem;
+					background: variables.$red-shadow-color;
+				}
+			}
+
+			#crazy {
+				background: variables.$purple-color;
+
+				&:hover {
+					font-size: 1.55rem;
+					background: variables.$purple-shadow-color;
+				}
+			}
+		}
+
+		.repository-container {
+			text-align: center;
+			margin-top: 15px;
+			a {
+				display: inline-block;
+				padding: 10px 15px;
+				background: black;
+				font-weight: 700;
+				font-size: 1.8rem;
+				color: variables.$normal-color;
+				border-radius: 3px;
+				text-decoration: none;
+				&:hover {
+					background: variables.$black-color;
+				}
+
+				i {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+/* MAIN CONTENT */
+/* GAME SECTION */
+main {
+	.game-section {
+		display: none;
+		text-align: center;
+		button {
+			display: none;
+			border-radius: 5px;
+			border: 2px solid variables.$normal-color;
+			padding: 10px 15px;
+			color: variables.$normal-color;
+			font-weight: 700;
+			font-size: 1.4rem;
+			cursor: pointer;
+			background: variables.$black-color;
+			transition: 0.4s all ease;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		.guess-input-container {
+			h3 {
+				font-size: 2rem;
+				font-weight: 700;
+				margin: 30px 0 13px 0;
+				color: variables.$normal-color;
+			}
+
+			input {
+				width: 60%;
+				border: 2px solid variables.$normal-color;
+				border-radius: 2px;
+				height: 25px;
+				padding: 4px;
+				text-align: center;
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: variables.$orange-shadow-color;
+				background: variables.$blue-color;
+
+				&:focus {
+					border: 2px solid variables.$normal-shadow-color;
+					outline: none;
+				}
+			}
+		}
+
+		.range-container {
+			margin-top: 20px;
+			p {
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: variables.$normal-color;
+			}
+
+			#range {
+				margin-top: 10px;
+				animation-name: grow;
+				animation-iteration-count: infinite;
+				animation-duration: 1s;
+			}
+
+			.progress-bar {
+				width: 300px;
+				height: 30px;
+				background: variables.$orange-shadow-color;
+				margin: 0 auto 20px auto;
+				border-radius: 4px;
+				display: flex;
+
+				#low {
+					border-top-left-radius: 4px;
+					border-bottom-left-radius: 4px;
+					background: variables.$orange-color;
+					flex: 0;
+				}
+
+				#space {
+					background: variables.$blue-color;
+					flex: 0;
+				}
+
+				#high {
+					border-top-right-radius: 4px;
+					border-bottom-right-radius: 4px;
+					background: variables.$orange-color;
+					flex: 0;
+				}
+			}
+		}
+
+		img {
+			width: 180px;
+			height: 180px;
+			margin: 0 auto;
+			border-radius: 3px;
+		}
+
+		.info-container {
+			margin-top: 20px;
+
+			div {
+				display: flex;
+				justify-content: space-between;
+
+				p,
+				span {
+					font-weight: 700;
+					font-size: 1.6rem;
+					color: variables.$normal-color;
+					margin: 6px 0;
+				}
+			}
+		}
+	}
+}
+
+/* ANIMATIONS */
+@keyframes grow {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

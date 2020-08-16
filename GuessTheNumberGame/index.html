@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Guess The Number Game By Sebery" />
+		<title>Guess The Number Game | By Sebery</title>
+		<!-- FONTS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="css/main.css" />
+		<!-- SCRIPTS -->
+		<script
+			src="https://kit.fontawesome.com/00a4efd493.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<!-- MAIN HEADER -->
+		<header>
+			<div class="info-container">
+				<h1>GUESS THE NUMBER GAME</h1>
+				<div class="made-container">
+					<p>Made By Sebery</p>
+					<span>👉</span>
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						><i class="fab fa-github"></i
+					></a>
+				</div>
+				<button id="start" type="button">Get Started</button>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main>
+			<!-- START GAME SECTION -->
+			<section class="start-game-section">
+				<h3>Guess The Random Number<br />Between 1 - 100</h3>
+
+				<p><em>Select Difficulty</em></p>
+
+				<div class="difficulty-buttons-container">
+					<button id="easy"><span>EASY</span> - 10 Attempts</button>
+					<button id="hard"><span>HARD</span> - 5 Attempts</button>
+					<button id="crazy"><span>CRAZY</span> - 1 Attempts</button>
+				</div>
+
+				<div class="repository-container">
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						>Repository<i class="fab fa-github"></i
+					></a>
+				</div>
+			</section>
+
+			<!-- GAME SECTION -->
+			<section class="game-section">
+				<button id="newGame">New Game</button>
+
+				<div class="guess-input-container">
+					<h3 id="guessTitle">Your Guess</h3>
+					<input type="number" id="guessNumber" />
+				</div>
+
+				<div class="range-container">
+					<p>Current Range</p>
+					<p id="range">1 - 100</p>
+					<div class="progress-bar">
+						<div id="low"></div>
+						<div id="space"></div>
+						<div id="high"></div>
+					</div>
+				</div>
+
+				<img
+					src="https://media.giphy.com/media/l3vR9IEU6nYAmZyoM/giphy.gif"
+					alt="Gif To Inspire You"
+					id="gif"
+				/>
+
+				<div class="info-container">
+					<div>
+						<p>Attempts</p>
+						<span id="totalAttempts">0</span>
+					</div>
+
+					<div>
+						<p>Guesses</p>
+						<span id="totalGuesses">-</span>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- SCRIPTS -->
+		<script src="js/cover-element.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

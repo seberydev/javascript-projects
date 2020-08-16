@@ -1,0 +1,84 @@
+@use 'config';
+@use 'variables';
+
+/* COVER SECTION */
+
+header {
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+	background: variables.$background-color;
+	@include config.center-element;
+
+	.info-container {
+		@include config.center-element;
+		text-align: center;
+
+		h1 {
+			font-size: 3.6rem;
+			font-weight: 700;
+			color: variables.$normal-color;
+		}
+
+		p {
+			font-size: 1.8rem;
+			font-weight: 400;
+			color: variables.$normal-color;
+		}
+
+		.made-container {
+			margin: 15px 0 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		span {
+			margin: 0 10px 8px 10px;
+			font-size: 1.8rem;
+		}
+
+		a {
+			color: variables.$normal-color;
+			font-size: 2rem;
+
+			&:hover {
+				color: variables.$normal-shadow-color;
+			}
+		}
+
+		button {
+			padding: 15px 25px;
+			background: black;
+			border-radius: 3px;
+			color: variables.$normal-color;
+			font-size: 1.8rem;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+
+			&:hover {
+				background: variables.$black-color;
+			}
+		}
+	}
+}
+
+/* ANIMATIONS */
+
+@keyframes close {
+	from {
+		top: 50%;
+	}
+
+	to {
+		top: -50%;
+	}
+}
+
+.start {
+	animation-name: close;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

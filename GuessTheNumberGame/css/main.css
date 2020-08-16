@@ -1,0 +1,304 @@
+/* GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-image: url(https://i.ibb.co/D7ZBXhm/s-a96b82c12-Cd104e0f0g64h24-A19-C21918-Di-EAj0k64l158m158.jpg);
+  width: 100%;
+  height: 100vh;
+  font-family: "Arvo", serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* MIXINS */
+/* COLORS */
+/* COVER SECTION */
+header {
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background: orange;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+header .info-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+header .info-container h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #fddddd;
+}
+header .info-container p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fddddd;
+}
+header .info-container .made-container {
+  margin: 15px 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .info-container span {
+  margin: 0 10px 8px 10px;
+  font-size: 1.8rem;
+}
+header .info-container a {
+  color: #fddddd;
+  font-size: 2rem;
+}
+header .info-container a:hover {
+  color: #dbaaaa;
+}
+header .info-container button {
+  padding: 15px 25px;
+  background: black;
+  border-radius: 3px;
+  color: #fddddd;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+header .info-container button:hover {
+  background: #0e4241;
+}
+
+/* ANIMATIONS */
+@keyframes close {
+  from {
+    top: 50%;
+  }
+  to {
+    top: -50%;
+  }
+}
+.start {
+  animation-name: close;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* MAIN CONTENT */
+/* START GAME SECTION */
+main {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+}
+main .start-game-section {
+  text-align: center;
+}
+main .start-game-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fddddd;
+}
+main .start-game-section p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fddddd;
+  margin: 30px 0 8px 0;
+}
+main .start-game-section .difficulty-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .start-game-section .difficulty-buttons-container button {
+  width: 60%;
+  margin: 7px 0;
+  border-radius: 5px;
+  border: 2px solid #fddddd;
+  padding: 13px 15px;
+  color: #fddddd;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: 0.4s all ease;
+}
+main .start-game-section .difficulty-buttons-container #easy {
+  background: #33a124;
+}
+main .start-game-section .difficulty-buttons-container #easy:hover {
+  font-size: 1.55rem;
+  background: #68d959;
+}
+main .start-game-section .difficulty-buttons-container #hard {
+  background: #a12824;
+}
+main .start-game-section .difficulty-buttons-container #hard:hover {
+  font-size: 1.55rem;
+  background: #d95d59;
+}
+main .start-game-section .difficulty-buttons-container #crazy {
+  background: #a12462;
+}
+main .start-game-section .difficulty-buttons-container #crazy:hover {
+  font-size: 1.55rem;
+  background: #d95999;
+}
+main .start-game-section .repository-container {
+  text-align: center;
+  margin-top: 15px;
+}
+main .start-game-section .repository-container a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: black;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #fddddd;
+  border-radius: 3px;
+  text-decoration: none;
+}
+main .start-game-section .repository-container a:hover {
+  background: #0e4241;
+}
+main .start-game-section .repository-container a i {
+  margin-left: 10px;
+}
+
+/* MAIN CONTENT */
+/* GAME SECTION */
+main .game-section {
+  display: none;
+  text-align: center;
+}
+main .game-section button {
+  display: none;
+  border-radius: 5px;
+  border: 2px solid #fddddd;
+  padding: 10px 15px;
+  color: #fddddd;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: #0e4241;
+  transition: 0.4s all ease;
+}
+main .game-section button:hover {
+  transform: scale(1.1);
+}
+main .game-section .guess-input-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 30px 0 13px 0;
+  color: #fddddd;
+}
+main .game-section .guess-input-container input {
+  width: 60%;
+  border: 2px solid #fddddd;
+  border-radius: 2px;
+  height: 25px;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #c94a31;
+  background: #6ebfb5;
+}
+main .game-section .guess-input-container input:focus {
+  border: 2px solid #dbaaaa;
+  outline: none;
+}
+main .game-section .range-container {
+  margin-top: 20px;
+}
+main .game-section .range-container p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fddddd;
+}
+main .game-section .range-container #range {
+  margin-top: 10px;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+main .game-section .range-container .progress-bar {
+  width: 300px;
+  height: 30px;
+  background: #c94a31;
+  margin: 0 auto 20px auto;
+  border-radius: 4px;
+  display: flex;
+}
+main .game-section .range-container .progress-bar #low {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: #ff5f40;
+  flex: 0;
+}
+main .game-section .range-container .progress-bar #space {
+  background: #6ebfb5;
+  flex: 0;
+}
+main .game-section .range-container .progress-bar #high {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ff5f40;
+  flex: 0;
+}
+main .game-section img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+main .game-section .info-container {
+  margin-top: 20px;
+}
+main .game-section .info-container div {
+  display: flex;
+  justify-content: space-between;
+}
+main .game-section .info-container div p,
+main .game-section .info-container div span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fddddd;
+  margin: 6px 0;
+}
+
+/* ANIMATIONS */
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
