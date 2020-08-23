@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="Match The Number Game Project By Sebery"
+		/>
+		<title>Match The Number Game | By Sebery</title>
+		<!-- SCRIPTS -->
+		<script
+			src="https://kit.fontawesome.com/00a4efd493.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="css/main.css" />
+		<!-- FONTS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- MAIN HEADER -->
+		<header>
+			<div class="info-container">
+				<h1>Match The Number Game</h1>
+				<div class="made-container">
+					<p>Made By Sebery</p>
+					<span>👉</span>
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						><i class="fab fa-github"></i
+					></a>
+				</div>
+				<button id="start" type="button">Get Started</button>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main>
+			<!-- SCORE CONTENT -->
+			<div class="score-content-container">
+				<h3>
+					Score: <span id="currentScore">%0%</span>/<span id="totalScore"
+						>%10%</span
+					>
+				</h3>
+				<h3>
+					<span id="itemImageNumber">%3%</span>
+					<span id="imageName">%colors%</span>?
+				</h3>
+				<div class="score-buttons-container">
+					<button id="trueBtn" type="submit">
+						<i id="trueIcon" class="fas fa-check"></i>
+					</button>
+					<button id="falseBtn" type="submit">
+						<i id="falseIcon" class="fas fa-times"></i>
+					</button>
+				</div>
+			</div>
+
+			<!-- GAME CONTENT -->
+			<div class="game-content-container">
+				<div class="welcome-section-container">
+					<h1>Welcome to the Number Match game...</h1>
+					<p class="rules">The rules are simple:</p>
+					<p>
+						<i class="fas fa-arrow-alt-circle-right"></i> Hit thumbs up if the
+						number of items on the image matches the displayed number.
+					</p>
+					<p>
+						<i class="fas fa-arrow-alt-circle-right"></i> Thumbs down if no
+						match!
+					</p>
+					<p class="last">
+						You have <span id="secondsLimit">%3%</span> seconds to decide.
+					</p>
+					<button id="startBtn" type="submit">
+						<i class="fas fa-play"></i>
+					</button>
+				</div>
+
+				<div class="game-section-container">
+					<img id="image" src="img/colors.jpg" alt="Image Container" />
+				</div>
+
+				<div class="end-section-container">
+					<h2>Game Over</h2>
+					<p>
+						Your Score Was <span id="lastScore">%0%</span>/<span
+							id="endTotalScore"
+							>%10%</span
+						>
+					</p>
+				</div>
+			</div>
+		</main>
+
+		<!-- SCRIPTS -->
+		<script src="js/cover.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
