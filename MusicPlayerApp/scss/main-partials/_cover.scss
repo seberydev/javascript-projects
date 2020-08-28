@@ -1,0 +1,89 @@
+@use 'config';
+
+/* COVER SECTION */
+
+header {
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+	background: orange;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	.info-container {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		h1 {
+			font-size: 3.6rem;
+			font-weight: 700;
+			color: white;
+		}
+
+		p {
+			font-size: 1.8rem;
+			font-weight: 400;
+			color: white;
+		}
+
+		.made-container {
+			margin: 15px 0 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		span {
+			margin: 0 10px 8px 10px;
+			font-size: 1.8rem;
+		}
+
+		a {
+			color: white;
+			font-size: 2rem;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		button {
+			padding: 15px 25px;
+			background: lightslategray;
+			border-radius: 3px;
+			color: white;
+			font-size: 1.8rem;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+
+			&:hover {
+				background: rgb(112, 140, 168);
+			}
+		}
+	}
+}
+
+/* ANIMATIONS */
+
+@keyframes close {
+	from {
+		top: 50%;
+	}
+
+	to {
+		top: -50%;
+	}
+}
+
+.start {
+	animation-name: close;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}

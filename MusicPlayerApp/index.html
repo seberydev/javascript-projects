@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="description" content="Music Player App Project By Sebery" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Music Player App | By Sebery</title>
+		<!-- SCRIPTS -->
+		<script
+			src="https://kit.fontawesome.com/00a4efd493.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- FONTS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<!-- MAIN HEADER -->
+		<header>
+			<div class="info-container">
+				<h1>MUSIC PLAYER APP</h1>
+				<div class="made-container">
+					<p>Made By Sebery</p>
+					<span>👉</span>
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						><i class="fab fa-github"></i
+					></a>
+				</div>
+				<button id="start" type="button">Get Started</button>
+			</div>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main>
+			<!-- PLAYER PROGRESS -->
+			<div class="player-progress-container">
+				<img src="Monster_music.svg" alt="Music Image" />
+				<progress id="playerProgress" value="0" max="100"></progress>
+			</div>
+
+			<!-- AUDIO PLAYER -->
+			<audio preload="auto">
+				<source src="" type="audio/mp3" />
+
+				Sorry! Your bowser does not support audio.
+			</audio>
+
+			<!-- CUSTOM AUDIO PLAYER -->
+			<div class="custom-audio-player-container">
+				<div class="song-info-container">
+					<h3>Now Playing</h3>
+					<h3 id="currentSong">Title Song</h3>
+				</div>
+
+				<div class="buttons-container">
+					<button id="playBtn"><i class="fas fa-play"></i></button>
+					<button id="stopBtn"><i class="fas fa-stop"></i></button>
+				</div>
+
+				<div class="volume-container">
+					<p>Volume</p>
+					<div>
+						<div id="plus"><i class="fas fa-plus"></i></div>
+						<input type="range" id="rangeInput" />
+						<div id="minus"><i class="fas fa-minus"></i></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- SONGS CONTAINER -->
+			<div class="songs-container">
+				<h2>The Best Songs In The World</h2>
+				<!-- TWNETY ONE PILOTS CONTAINER -->
+				<div class="band-container">
+					<div class="band-description">
+						<img src="TOP_Image.png" alt="Twenty One Pilots Image" />
+						<h3>Twenty One Pilots</h3>
+						<p><em>"Save The Best For First"</em></p>
+					</div>
+					<ul>
+						<li>1- <span>Cut My Lip</span></li>
+						<li>2- <span>Doubt</span></li>
+						<li>3- <span>Levitate</span></li>
+						<li>4- <span>Not Today</span></li>
+					</ul>
+				</div>
+
+				<!-- CAGE THE ELEPHANT -->
+				<div class="band-container">
+					<div class="band-description">
+						<img src="CTE_Image.png" alt="Cage The Elephant Image" />
+						<h3>Cage The Elephant</h3>
+						<p><em>"Even On A Cloudy Day"</em></p>
+					</div>
+					<ul>
+						<li>1- <span>Broken Boy</span></li>
+						<li>2- <span>Cigarette Daydreams</span></li>
+						<li>3- <span>Social Cues</span></li>
+						<li>4- <span>Sweetie Little Jean</span></li>
+					</ul>
+				</div>
+			</div>
+		</main>
+
+		<!-- SCRIPTS -->
+		<script src="js/main.js"></script>
+		<script src="js/cover.js"></script>
+	</body>
+</html>

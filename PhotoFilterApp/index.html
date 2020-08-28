@@ -13,8 +13,31 @@
 			href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<!-- SCRIPTS -->
+		<script
+			src="https://kit.fontawesome.com/00a4efd493.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
+		<!-- MAIN HEADER -->
+		<header>
+			<div class="info-container">
+				<h1>PHOTO FILTER APP</h1>
+				<div class="made-container">
+					<p>Made By Sebery</p>
+					<span>👉</span>
+					<a
+						rel="noopener noreferrer"
+						target="_blank"
+						href="https://github.com/Sebery/javascript-projects"
+						><i class="fab fa-github"></i
+					></a>
+				</div>
+				<button id="start" type="button">Get Started</button>
+			</div>
+		</header>
+
 		<!-- MAIN CONTENT -->
 		<main>
 			<!-- MAIN CANVAS -->
@@ -44,245 +67,6 @@
 
 		<!-- SCRIPTS -->
 		<script src="js/main.js"></script>
+		<script src="js/cover.js"></script>
 	</body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Photo Effects App</title>
-
-		<style>
-			html {
-				font-size: 10px;
-			}
-
-			body {
-				background: rgb(48, 47, 47);
-				display: flex;
-				flex-direction: column;
-			}
-
-			main {
-				flex: 3;
-			}
-
-			aside {
-				flex: 1;
-				margin-left: 0.5rem;
-			}
-
-			button {
-				background: rgb(21, 20, 20);
-				text-align: left;
-				padding: 1.6rem 0 1.6rem 2rem;
-				font-size: 1.6rem;
-				cursor: pointer;
-				color: rgb(212, 210, 210);
-				border: none;
-				border-bottom: 1px solid;
-			}
-
-			button:hover {
-				background: rgb(50, 47, 47);
-			}
-
-			label {
-				font-size: 1.8rem;
-				padding-right: 1.6rem;
-			}
-
-			.input-wrapper {
-				background: gray;
-				padding: 1.6rem;
-			}
-
-			.effects {
-				display: flex;
-				flex-direction: column;
-			}
-
-			.controls {
-				display: flex;
-			}
-
-			.controls > button {
-				flex: 1;
-				border-bottom: none;
-				text-align: center;
-			}
-
-			canvas {
-				width: 100%;
-			}
-
-			@media (min-width: 1000px) {
-				body {
-					flex-direction: row;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<canvas id="canvas"></canvas>
-		</main>
-		<aside class="sidebar">
-			<div class="input-wrapper">
-				<label for="uploader">Select file:</label>
-				<input type="file" id="uploader" />
-			</div>
-			<div class="effects">
-				<button>Greyscale</button>
-				<button>Sepia effect</button>
-				<button>Invert</button>
-				<button>RGB - RBG</button>
-				<button>RGB - BGR</button>
-				<button>RGB - GBR</button>
-				<button>RGB - GRB</button>
-			</div>
-			<div class="controls">
-				<button>Clear</button>
-				<button>Download</button>
-			</div>
-		</aside>
-		<script>
-			const canvas = document.getElementById("canvas");
-			const ctx = canvas.getContext("2d");
-
-			const reader = new FileReader();
-			const img = new Image();
-
-			const uploadImage = (e) => {
-				reader.onload = () => {
-					img.onload = () => {
-						canvas.width = img.width;
-						canvas.height = img.height;
-						ctx.drawImage(img, 0, 0);
-					};
-					img.src = reader.result;
-				};
-				reader.readAsDataURL(e.target.files[0]);
-			};
-
-			const imageLoader = document.getElementById("uploader");
-			uploader.addEventListener("change", uploadImage);
-
-			const greyscale = () => {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const grey = data[i] * 0.21 + data[i + 1] * 0.71 + data[i + 2] * 0.07;
-					data[i] = grey;
-					data[i + 1] = grey;
-					data[i + 2] = grey;
-				}
-				ctx.putImageData(imageData, 0, 0);
-			};
-
-			const sepia = () => {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const grey = data[i] * 0.21 + data[i + 1] * 0.71 + data[i + 2] * 0.07;
-					data[i] = grey + 95;
-					data[i + 1] = grey + 58;
-					data[i + 2] = grey;
-				}
-				ctx.putImageData(imageData, 0, 0);
-			};
-
-			const invert = () => {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					data[i] = 255 - data[i];
-					data[i + 1] = 255 - data[i + 1];
-					data[i + 2] = 255 - data[i + 2];
-				}
-				ctx.putImageData(imageData, 0, 0);
-			};
-
-			function rbg() {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const green = data[i + 1];
-					data[i] = data[i];
-					data[i + 1] = data[i + 2];
-					data[i + 2] = green;
-				}
-				ctx.putImageData(imageData, 0, 0);
-			}
-
-			function bgr() {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const red = data[i];
-					data[i] = data[i + 2];
-					data[i + 1] = data[i + 1];
-					data[i + 2] = red;
-				}
-				ctx.putImageData(imageData, 0, 0);
-			}
-
-			function gbr() {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const red = data[i];
-					data[i] = data[i + 1];
-					data[i + 1] = data[i + 2];
-					data[i + 2] = red;
-				}
-				ctx.putImageData(imageData, 0, 0);
-			}
-
-			function grb() {
-				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-				const data = imageData.data;
-				for (let i = 0; i < data.length; i += 4) {
-					const red = data[i];
-					data[i] = data[i + 1];
-					data[i + 1] = red;
-					data[i + 2] = data[i + 2];
-				}
-				ctx.putImageData(imageData, 0, 0);
-			}
-
-			function clearChanges() {
-				img.src = reader.result;
-			}
-
-			function download() {
-				const image = canvas.toDataURL();
-				const link = document.createElement("a");
-				link.href = image;
-				link.download = "image.png";
-				link.click();
-			}
-
-			document
-				.querySelectorAll("button")[0]
-				.addEventListener("click", greyscale);
-			document.querySelectorAll("button")[1].addEventListener("click", sepia);
-			document.querySelectorAll("button")[2].addEventListener("click", invert);
-			document.querySelectorAll("button")[3].addEventListener("click", rbg);
-			document.querySelectorAll("button")[4].addEventListener("click", bgr);
-			document.querySelectorAll("button")[5].addEventListener("click", gbr);
-			document.querySelectorAll("button")[6].addEventListener("click", grb);
-			document
-				.querySelectorAll("button")[7]
-				.addEventListener("click", clearChanges);
-			document
-				.querySelectorAll("button")[8]
-				.addEventListener("click", download);
-		</script>
-	</body>
-</html>
--->

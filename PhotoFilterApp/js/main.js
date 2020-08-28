@@ -83,9 +83,6 @@ const filterController = (function () {
 				context.putImageData(imgData, 0, 0);
 			}
 		},
-		resetFilter: function (img, reader) {
-			img.src = reader.result;
-		},
 	};
 })();
 
@@ -95,6 +92,7 @@ const UIController = (function () {
 		inputElement: "file",
 		canvasElement: "canvas",
 		filterBtns: ".effects-buttons-container > button",
+		configBtns: ".config-buttons-container > button",
 	};
 
 	return {
@@ -126,6 +124,7 @@ const controller = (function (UI, filterC) {
 	const filterButtons = document.querySelectorAll(DOM.filterBtns);
 	let img;
 	let reader;
+	const configBtns = document.querySelectorAll(DOM.configBtns);
 
 	const addEvents = function () {
 		document
@@ -174,13 +173,24 @@ const controller = (function (UI, filterC) {
 			filterC.filterImage(imgData, ctx, "gbr");
 		});
 
-		filterButtons[0].addEventListener("click", function () {
+		filterButtons[6].addEventListener("click", function () {
 			filterC.filterImage(imgData, ctx, "grb");
 		});
+
+		configBtns[0].addEventListener("click", resetFilter);
+		configBtns[1].addEventListener("click", downloadImage);
 	};
 
 	const resetFilter = function () {
 		img.src = reader.result;
+	};
+
+	const downloadImage = function () {
+		let URL = canvas.toDataURL();
+		let element = document.createElement("a");
+		element.href = URL;
+		element.download = "image.png";
+		element.click();
 	};
 
 	return {
